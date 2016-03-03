@@ -46,7 +46,7 @@ There is a single global modal window `#send-btc-modal` whose attributes
 `address`, `label`, `amount`, and `fiat` can change each time it opens,
 so having multiple widgets on the same page is as easy as setting up
 another link to the same modal with new parameters.
-Modals can't be open simultaneously by design, so don't worry about them fighting.
+Modals should never be open simultaneously.
 
 `amount` is in bitcoin.
 `fiat` is the ISO currency code of the preferred native conversion.
