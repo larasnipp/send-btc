@@ -51,7 +51,11 @@ Modals can't be open simultaneously by design, so don't worry about them fightin
 `amount` is in bitcoin.
 `fiat` is the ISO currency code of the preferred native conversion.
 
-The user is given the option to scan a QR code in the modal window,
-open a [bitcoin URI](https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki), 
+The user is given the option to modify `label`, `amount`, and `fiat`
+(which is superfluous to the transaction anyway) and then
+open a [bitcoin URI](https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki),
+scan a QR code in the modal window,
 or simply copy-paste the recipient's public address for settling however she pleases.
+
+In the future we could add a minimal bill / receipt printing component for people who like paper.
 
