@@ -38,7 +38,8 @@ I like to use the BitPay donate button images:
 
 The widget uses a Bootstrap [modal](http://getbootstrap.com/javascript/#modals)
 to interact with the user.
-It can be opened from HTML using Bootstrap's [data attributes](http://getbootstrap.com/javascript/#js-data-attrs):
+It can be opened from HTML using Bootstrap's [data attributes](http://getbootstrap.com/javascript/#js-data-attrs)
+(or using the equivalent JavaScript):
 
 ```html
     <a data-toggle="modal" data-target="#send-btc-modal"
@@ -55,6 +56,7 @@ Modals should never be open simultaneously.
 
 `amount` is in bitcoin.
 `fiat` is the ISO currency code of the preferred native conversion.
+Currently, this must be one of "CNY", "RUB", "EUR", or "USD".
 
 The user is given the option to modify `label`, `amount`, and `fiat`
 (which is superfluous to the transaction anyway) and then
