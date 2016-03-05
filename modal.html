@@ -1,36 +1,18 @@
-
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
-<!-- Font Awesome CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-
-<!-- jQuery JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" integrity="sha384-8C+3bW/ArbXinsJduAjm9O7WNnuOcO+Bok/VScRYikawtvz4ZPrpXtGfKIewM9dK" crossorigin="anonymous"></script>
-
-<!-- jQuery QR-code JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js" integrity="sha384-0B/45e2to395pfnCkbfqwKFFwAa7zXdvd42eAFJa3Vm8KZ/jmHdn93XdWi//7MDS" crossorigin="anonymous"></script>
-
-<!-- Bootstrap JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-<div id="btc-widget">
-    <a data-toggle="modal" data-target="#send-btc-modal" data-address="1GTw1pfrxEV6tNwRQxwocnMRoF9B7LjmJ2" data-label="Donate plz" data-amount="1.0" data-fiat="USD">
-        <img src="https://bitpay.com/img/donate-md.png" />
-    </a>
-</div>
-
+<!-- All user-widget interaction happens through a global modal window -->
 <div class="modal fade" id="send-btc-modal" tabindex="-1" role="dialog" aria-labelledby="send-btc-modal-title">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
                 <h4 class="modal-title" id="send-btc-modal-title">
+                    <!-- Set anchor href to submit URI -->
+                    <!-- Set span inner text to destination address -->
                     Send to <a id="send-btc-uri"><span id="send-btc-address"></span></a>
                 </h4>
             </div>
             <form id="send-btc-modal-form" class="form-horizontal" role="form">
                 <div class="modal-body">
+                    <!-- Transaction label form input -->
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="send-btc-label">Label</label>
                         <span class="input-group col-sm-9">
@@ -38,6 +20,7 @@
                              placeholder="subject" oninput="sendBTC.refreshURI(true);">
                         </span>
                     </div>
+                    <!-- Transaction amount form input -->
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="send-btc-amount">Amount</label>
                         <span class="input-group col-sm-9">
@@ -48,6 +31,7 @@
                             </span>
                         </span>
                     </div>
+                    <!-- Fiat equivalent (for convenience) -->
                     <div class="form-group">
                         <label class="control-label col-sm-2 sr-only" for="send-btc-fiat-amount">Fiat amount</label>
                         <span class="input-group col-sm-9">
@@ -59,6 +43,7 @@
                                     <span class="fa fa-caret-down"></span>
                                     <span id="send-btc-modal-fiat-symbol"></span>
                                 </button>
+                                <!-- Update dropdown items during sendBTC.updateExchange() -->
                                 <ul id="send-btc-modal-fiat-options" class="dropdown-menu">
                                     <li style="cursor:pointer;">
                                         <a onclick="sendBTC.updateExchange();">
@@ -69,6 +54,7 @@
                             </span>
                         </span>
                     </div>
+                    <!-- Set div inner HTML to QR code -->
                     <div id="send-btc-modal-qrcode" class="text-center"></div>
                 </div>
                 <div class="modal-footer">
@@ -79,6 +65,3 @@
         </div>
     </div>
 </div>
-
-<script src="send-btc.js"></script>
-
