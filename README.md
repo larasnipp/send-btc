@@ -31,6 +31,11 @@ somewhere in your page before including:
 
 ## Usage
 
+Use whatever you want for the button.
+I like to use the BitPay donate button images:
+
+![small](https://bitpay.com/img/donate-sm.png) ![medium](https://bitpay.com/img/donate-md.png) ![large](https://bitpay.com/img/donate-lg.png)
+
 The widget uses a Bootstrap [modal](http://getbootstrap.com/javascript/#modals)
 to interact with the user.
 It can be opened from HTML using Bootstrap's [data attributes](http://getbootstrap.com/javascript/#js-data-attrs):

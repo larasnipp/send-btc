@@ -6,7 +6,6 @@ var sendBTC = {
         'CNY': null,
     },
     'refreshQRCodeDelay': 400,
-    'updateExchangeDelay': 60000,
     'fiatSymbol': function(fiat) {
         return '<span class="fa fa-' + fiat.toLowerCase() + '"></span>';
     },
@@ -51,20 +50,26 @@ var sendBTC = {
     'updateExchange': function() {
         var me = this;
         $.getJSON('https://blockchain.info/ticker', function(data, textStatus) {
-            if (!data)
-                console.log(textStatus);
-            $('#send-btc-modal-fiat-options').empty();
+            var options = $('#send-btc-modal-fiat-options');
+            options.empty();
+            var gotSome = false;
             for (fiat in me.fiatRates) {
-                me.fiatRates[fiat] = data[fiat].last;
-                $('#send-btc-modal-fiat-options').append(
-                    '<li><a onclick="sendBTC.setFiat(\'' + fiat + '\');">' +
-                    me.fiatSymbol(fiat) + ' ' + fiat + ' <span class="text-muted">' + me.fiatRates[fiat] + '</span>' +
-                    '</a></li>'
-                );
+                if (fiat in data) {
+                    gotSome = true;
+                    me.fiatRates[fiat] = data[fiat].last;
+                    options.append(
+                        '<li style="cursor:pointer;"><a onclick="sendBTC.setFiat(\'' + fiat + '\');">' +
+                        me.fiatSymbol(fiat) + ' ' + fiat +
+                        ' <span class="text-muted">' + me.fiatRates[fiat] + '</span>' +
+                        '</a></li>'
+                    );
+                }
             }
+            if (gotSome)
+                options.append('<li role="separator" class="divider"></li>');
+            options.append('<li style="cursor:pointer;"><a onclick="sendBTC.updateExchange();"><span class="text-muted">Fetch rates</span></a></li>');
             me.refreshFiat();
         });
-        setTimeout(this.updateExchange, this.updateExchangeDelay);
     },
     'init': function() {
         sendBTC.updateExchange();
