@@ -11,8 +11,9 @@ var sendBTC = {
     },
     refreshQRCode: function(uri) {
         delete this.refreshQRCodeID;
-        $('#send-btc-modal-qrcode').empty();
-        $('#send-btc-modal-qrcode').qrcode(uri);
+        var qrdiv = $('#send-btc-modal-qrcode');
+        qrdiv.empty();
+        qrdiv.qrcode(uri);
     },
     refreshURI: function(delayQRCode) {
         var uri = 'bitcoin:' + this.address + '?amount=' + encodeURIComponent($('#send-btc-amount').val()) + '&label=' + encodeURIComponent($('#send-btc-label').val());
