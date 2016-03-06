@@ -2,6 +2,8 @@
 
 This is a super simple way to receive bitcoin online.
 See it in action, and please consider giving me some of your money:
+<div id="send-btc-modal"></div>
+<script src="https://raw.githubusercontent.com/wm-noble/send-btc/master/send-btc.js"></script>
 <a href="#" data-toggle="modal" data-target="#send-btc-modal"
    data-address="1GTw1pfrxEV6tNwRQxwocnMRoF9B7LjmJ2" data-label="Donate plz" data-amount="1.0" data-fiat="USD">
     <img src="https://bitpay.com/img/donate-md.png" />
