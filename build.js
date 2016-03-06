@@ -17,7 +17,6 @@ var html_mini = new minimize({
         lowerCaseTags: true             // call .toLowerCase for each tag name (true if xmlMode is `false`) 
     }
 });
-new 
 
 fs.readFile('modal.html', 'utf8', function(err, html) {
     html_mini.parse(html, function(err, html) {
