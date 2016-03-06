@@ -26,7 +26,7 @@ You have to include (using major CDNs as examples):
 somewhere in your page before including:
 
 ```html
-<script src="send-btc.js"></script>
+<script src="send-btc.min.js"></script>
 ```
 
 ## Usage
