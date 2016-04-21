@@ -58,7 +58,7 @@ var sendBTC = {
 
     updateExchange: function() {
         var me = this;
-        $.getJSON('https://blockchain.info/ticker', function(data, textStatus) {
+        $.getJSON('@TICKER@', function(data, textStatus) {
             var options = $('#send-btc-modal-fiat-options');
             options.empty();
             var gotSome = false;
