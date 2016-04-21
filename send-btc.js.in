@@ -67,16 +67,18 @@ var sendBTC = {
                     gotSome = true;
                     me.fiatRates[fiat] = data[fiat].last;
                     options.append(
-                        '<li style="cursor:pointer;"><a onclick="sendBTC.setFiat(\'' + fiat + '\');">' +
+                        '<li><a href="#" onclick="sendBTC.setFiat(\'' + fiat + '\');">' +
                         me.fiatSymbol(fiat) + ' ' + fiat +
-                        ' <span class="text-muted">' + me.fiatRates[fiat] + '</span>' +
-                        '</a></li>'
+                        ' <span class="text-muted">' + me.fiatRates[fiat] + '</span></a></li>'
                     );
                 }
             }
-            if (gotSome)
-                options.append('<li role="separator" class="divider"></li>');
-            options.append('<li style="cursor:pointer;"><a onclick="sendBTC.updateExchange();"><span class="text-muted">Fetch rates</span></a></li>');
+            if (!gotSome)
+                options.append('<li class="dropdown-header">No market data</li>');
+            options.append(
+                '<li role="separator" class="divider"></li>' +
+                '<li><a href="#" onclick="sendBTC.updateExchange();">Fetch rates</a></li>'
+            );
             me.refreshFiat();
         });
     },

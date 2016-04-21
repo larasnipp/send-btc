@@ -45,11 +45,9 @@
                                 </button>
                                 <!-- Update dropdown items during sendBTC.updateExchange() -->
                                 <ul id="send-btc-modal-fiat-options" class="dropdown-menu">
-                                    <li style="cursor:pointer;">
-                                        <a onclick="sendBTC.updateExchange();">
-                                            <span class="text-muted">Fetch rates</span>
-                                        </a>
-                                    </li>
+                                    <li class="dropdown-header">No market data</li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#" onclick="sendBTC.updateExchange();">Fetch rates</a></li>
                                 </ul>
                             </span>
                         </span>
