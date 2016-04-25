@@ -21,7 +21,6 @@ var sendBTC = {
 
     refreshURI: function(delayQRCode) {
         var uri = 'bitcoin:' + this.address + '?amount=' + encodeURIComponent($('#send-btc-amount').val()) + '&label=' + encodeURIComponent($('#send-btc-label').val());
-        $('#send-btc-uri').attr('href', uri);
         $('#send-btc-modal-form').attr('action', uri);
         if (this.refreshQRCodeID)
             clearTimeout(this.refreshQRCodeID);
@@ -107,6 +106,7 @@ var sendBTC = {
             sendBTC.address = address;
             sendBTC.label = label;
             $('#send-btc-address').text(address);
+            $('#send-btc-address').attr('href', 'https://blockchain.info/address/' + address);
             $('#send-btc-label').val(label);
             $('#send-btc-amount').val(amount);
             sendBTC.setFiat(fiat);
