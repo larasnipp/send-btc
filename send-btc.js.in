@@ -45,7 +45,7 @@ var sendBTC = {
     refreshFiat: function() {
         var rate = this.fiatRates[this.fiat];
         if (rate)
-            $('#send-btc-fiat-amount').val(($('#send-btc-amount').val() * rate).toFixed(8));
+            $('#send-btc-fiat-amount').val(($('#send-btc-amount').val() * rate).toFixed(2));
     },
 
     setFiat: function(fiat) {
