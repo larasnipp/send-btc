@@ -76,7 +76,8 @@ var sendBTC = {
                 options.append('<li class="dropdown-header">No market data</li>');
             options.append(
                 '<li role="separator" class="divider"></li>' +
-                '<li><a href="#" onclick="sendBTC.updateExchange();">Fetch rates</a></li>'
+                '<li><a href="#" onclick="sendBTC.updateExchange();">' +
+                '<span class="fa fa-refresh"></span> Refresh</a></li>'
             );
             me.refreshFiat();
         });
