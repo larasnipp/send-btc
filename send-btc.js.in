@@ -84,6 +84,8 @@ var sendBTC = {
     },
 
     insertModal: function() {
+        $('#send-btc-modal').remove();
+        $('html').prepend('<span id="send-btc-modal"></span>');
         $('#send-btc-modal').addClass('modal fade');
         $('#send-btc-modal').attr('tabindex', '-1').attr('role', 'dialog').attr('aria-labelledby', 'send-btc-modal-title');
         $('#send-btc-modal').html('@MODAL_HTML@');
