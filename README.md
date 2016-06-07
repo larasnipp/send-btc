@@ -10,7 +10,7 @@ into a single script called `send-btc.min.js`. The build system is just a node s
 [node-minify](https://www.npmjs.com/package/node-minify). Run:
 
 ```bash
-node build.js
+node build
 ```
 
 ## Dependencies
