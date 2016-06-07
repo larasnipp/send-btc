@@ -13,15 +13,12 @@ into a single script called `send-btc.min.js`. The build system is just a node s
 node build
 ```
 
-## Dependencies
+## Javascript Dependencies
 
-You have to include (using major CDNs as examples):
+send-btc depends on [jQuery.qrcode](https://larsjung.de/jquery-qrcode/)
+and [Bootstrap](http://getbootstrap.com/). Include (using major CDNs as examples):
 
 ```html
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<!-- Font Awesome CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
 <!-- jQuery JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" integrity="sha384-8C+3bW/ArbXinsJduAjm9O7WNnuOcO+Bok/VScRYikawtvz4ZPrpXtGfKIewM9dK" crossorigin="anonymous"></script>
 <!-- jQuery QR-code JS -->
@@ -34,6 +31,18 @@ somewhere in your page before including:
 
 ```html
 <script src="send-btc.min.js"></script>
+```
+
+## CSS Dependencies
+
+send-btc also depends on [Font Awesome](http://fontawesome.io/) (and Bootstrap CSS).
+Include these anywhere in your page:
+
+```html
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
 ```
 
 ## Usage
