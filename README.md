@@ -4,20 +4,14 @@ This is a super simple way to receive bitcoin online.
 
 ## Building
 
-This package includes a shitty build system that configures and minifies all source files
+This package includes a shitty build system that minifies all source files
 into a single script called `send-btc.min.js`. The build system is just a node script that depends on
-[fs](https://www.npmjs.com/package/fs), [minimize](https://www.npmjs.com/package/minimize),
-[node-minify](https://www.npmjs.com/package/node-minify), and
-[minimist](https://www.npmjs.com/package/minimist). Run:
+[fs](https://www.npmjs.com/package/fs), [minimize](https://www.npmjs.com/package/minimize), and
+[node-minify](https://www.npmjs.com/package/node-minify). Run:
 
 ```bash
-node build.js --ticker=https://www.domain.com/path_to_ticker
+node build.js
 ```
-
-from the top of the source directory tree,
-where `www.domain.com` is the registered domain on which you will host the script,
-and `path_to_ticker` is just a reverse proxy endpoint to [Blockchain.info's ticker](https://blockchain.info/ticker).
-This option is important to prevent XSS errors in users' browsers when accessed over the internet.
 
 ## Dependencies
 
