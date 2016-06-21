@@ -15,7 +15,7 @@
                     <!-- Transaction label form input -->
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="send-btc-label">Label</label>
-                        <span class="input-group col-sm-9">
+                        <span class="col-sm-9">
                             <input type="text" id="send-btc-label" class="form-control" name="label"
                              placeholder="subject" oninput="sendBTC.refreshURI(true);">
                         </span>
@@ -23,36 +23,39 @@
                     <!-- Transaction amount form input -->
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="send-btc-amount">Amount</label>
-                        <span class="input-group col-sm-9">
-                            <input type="number" id="send-btc-amount" class="form-control" name="amount"
-                             min="0" step="1e-8" oninput="sendBTC.refreshFiat();sendBTC.refreshURI(true);" required>
-                            <span class="input-group-addon" aria-hidden="true">
-                                <span class="fa fa-btc"></span>
+                        <span class="col-sm-4">
+                            <span class="input-group">
+                                <input type="number" id="send-btc-amount" class="form-control" name="amount"
+                                 min="0" step="1e-8" oninput="sendBTC.refreshFiat();sendBTC.refreshURI(true);"
+                                 required>
+                                <span class="input-group-addon" aria-hidden="true">
+                                    <span class="fa fa-btc"></span>
+                                </span>
                             </span>
                         </span>
-                    </div>
-                    <!-- Fiat equivalent (for convenience) -->
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="send-btc-amount-fiat">
+                        <!-- Fiat equivalent (for convenience) -->
+                        <label class="control-label col-sm-1" for="send-btc-amount-fiat">
                             <span class="fa fa-exchange" aria-hidden="true" aria-label="Amount (in fiat)"></span>
                         </label>
-                        <span class="input-group col-sm-9">
-                            <input type="number" id="send-btc-fiat-amount" class="form-control"
-                             min="0" step="1e-2" oninput="sendBTC.refreshBTC();">
-                            <span class="input-group-btn">
-                                <button type="button" class="btn btn-default dropdown-toggle"
-                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="fa fa-caret-down"></span>
-                                    <span id="send-btc-modal-fiat-symbol"></span>
-                                </button>
-                                <!-- Update dropdown items during sendBTC.updateExchange() -->
-                                <ul id="send-btc-modal-fiat-options" class="dropdown-menu">
-                                    <li class="disabled">No market data</li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#" onclick="sendBTC.updateExchange();">
-                                        <span class="fa fa-refresh"></span> Refresh
-                                    </a></li>
-                                </ul>
+                        <span class="col-sm-4">
+                            <span class="input-group">
+                                <input type="number" id="send-btc-fiat-amount" class="form-control"
+                                 min="0" step="1e-2" oninput="sendBTC.refreshBTC();">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="fa fa-caret-down"></span>
+                                        <span id="send-btc-modal-fiat-symbol"></span>
+                                    </button>
+                                    <!-- Update dropdown items during sendBTC.updateExchange() -->
+                                    <ul id="send-btc-modal-fiat-options" class="dropdown-menu">
+                                        <li class="disabled">No market data</li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#" onclick="sendBTC.updateExchange();">
+                                            <span class="fa fa-refresh"></span> Refresh
+                                        </a></li>
+                                    </ul>
+                                </span>
                             </span>
                         </span>
                     </div>
