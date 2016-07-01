@@ -72,7 +72,7 @@ Modals should never be open simultaneously.
 
 `amount` is in bitcoin.
 `fiat` is the ISO currency code of the preferred native conversion.
-Currently, this must be one of "CNY", "RUB", "EUR", or "USD".
+Currently, this must be one of "JPY", "KRW", "CNY", "RUB", "EUR", "GBP", or "USD".
 
 The user is given the option to modify `label`, `amount`, and `fiat`
 (which is superfluous to the transaction anyway) and then

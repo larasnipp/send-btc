@@ -2,9 +2,12 @@
 var sendBTC = {
     fiatRates: {
         'USD': null,
+        'GBP': null,
         'EUR': null,
         'RUB': null,
         'CNY': null,
+        'KRW': null,
+        'JPY': null,
     },
     refreshQRCodeDelay: 400,
 
